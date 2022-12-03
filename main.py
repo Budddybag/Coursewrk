@@ -3,6 +3,7 @@ import sqlite3
 from random import randint
 from tkinter import scrolledtext
 import tkinter.messagebox as mb
+from time import sleep
 
 
 class Authorization():
@@ -165,7 +166,16 @@ class Comb_sort():
                     arr[i], arr[i + step] = arr[i + step], arr[i]
                     flag = True
                 i += step
-        self.textbox2.insert(INSERT, arr)
+            # self.comb.after(1000, self.textbox2.delete("1.0", END))
+            # self.comb.after(1000, self.textbox2.insert(INSERT, arr))
+            self.textbox2.delete("1.0", END)
+            self.textbox2.insert(INSERT, arr)
+            self.comb.update()
+            sleep(1)
+
+
+
+
 
 
 enter = [False]
